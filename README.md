@@ -52,7 +52,7 @@ export PYTHONPATH="{PYTHONPATH}:path/to/dir/differential_surface_representation"
  ### Precomputing GT surface areas
  One of the loss functions relies on access to GT surface area of the objects. 
  This quantity is not readily available within the dataset. Please use the 
- script [`preprocessing/shapenet_mesh_area.py`]() to precompute the areas for 
+ script [`preprocessing/shapenet_mesh_area.py`](https://github.com/bednarikjan/differential_surface_representation/blob/master/preprocessing/shapenet_mesh_area.py) to precompute the areas for 
  all the data samples (the script adds this information to the dataset files 
  directly).
  
