@@ -1,0 +1,69 @@
+# Config. file to train [1].
+#
+# [1] Bednarik Jan et al. Shape Reconstruction by Learning Differentiable
+#     Surface Representations. CoRR 2019.
+#
+# Author: Jan Bednarik, jan.bednarik@epfl.ch
+#
+
+# Data
+#path_root_imgs: '.../AtlasNet/data/ShapeNetRendering/ShapeNetRendering'
+#path_root_pclouds: '.../AtlasNet/data/customShapeNet'
+#path_category_file: '.../AtlasNet/data/ShapeNetRendering/synsetoffset2category.txt'
+
+path_root_imgs: '/cvlabsrc1/cvlab/datasets_jan/AtlasNet/data/ShapeNetRendering/ShapeNetRendering'
+path_root_pclouds: '/cvlabsrc1/cvlab/datasets_jan/AtlasNet/data/customShapeNet'
+path_category_file: '/cvlabsrc1/cvlab/datasets_jan/AtlasNet/data/ShapeNetRendering/synsetoffset2category.txt'
+
+### Model
+N: 2500
+M: 2500
+code: 1024
+
+# Encoder
+enc_freeze: False
+enc_weights: # Path, only needed if `enc_freeze`=True.
+normalize_cw: False
+
+# Decoder
+num_patches: 25
+
+# for FN decoder
+dec_activ_fns: 'softplus'
+dec_use_tanh: False
+dec_batch_norm: False
+
+# Losses
+loss_scaled_isometry: True
+alpha_scaled_isometry: 0.001
+alphas_sciso:
+  E: 1.
+  G: 1.
+  skew: 1.
+  stretch: 0.
+  total_area: 100
+  total_area_mult: 1.
+
+# Training
+epochs: 1000
+batch_size: 9
+lr: 0.001
+
+# lr scheduler
+reduce_lr_on_plateau: True
+lr_factor: 0.3
+lr_patience: 30
+lr_min: 0.000001
+lr_threshold: 0.0001
+
+# Savers
+train_state_save_period: 1
+
+# Data
+#tr_classes: ['plane', 'bench', 'cabinet', 'car', 'chair', 'monitor', 'lamp',
+#             'speaker', 'firearm', 'couch', 'table', 'cellphone', 'watercraft']
+#va_classes: ['plane', 'bench', 'cabinet', 'car', 'chair', 'monitor', 'lamp',
+#             'speaker', 'firearm', 'couch', 'table', 'cellphone', 'watercraft']
+
+tr_classes: ['plane']
+va_classes: ['plane']
