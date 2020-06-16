@@ -90,7 +90,7 @@ tensorboard --logdir=. --port=8008 --bind_all
  
  Qualitative results for point cloud auto-encoding (PCAE) task on ShapeNet.
  
- <img scr="img/results_qualit_pcae.png" width="500">
+ ![pcae](img/results_qualit_pcae.png){:width="500px"}
  
  Qualitative results for single-view reconstruction (SVR) task on Textureless 
  Deformable Surfaces.
